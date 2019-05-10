@@ -42,8 +42,29 @@
         //Поиск по условию
         $bd_find = "SELECT id, email, password FROM users WHERE email = 'vasya@mail.ru';";
         
+        //Обновление записей
+        $bd_update = "UPDATE users SET password = 'strongsecret' WHERE email='vasya@mail.ru';";
 
+        //Удаление записей
+        $bd_delete = "DELETE FROM users WHERE email = 'vasya@mail.ru';";
 
+        //Обобщение
+        $bd_sum = "SELECT SUM(show_count);";
+
+        //Группировка
+        $bd_group = "SELECT category_id FROM gifs GROUP BY category_id";
+        
+        //Группировка с обобщением
+        $bd_sumgroup = "SELECT colname, SUM(cnt) FROM table GROUP BY colname;";
+
+        //Объединение таблиц
+        $bd_merge_tables = "SELECT c.id email, content FROM comments c JOIN users u ON c.user_id = u.id;";
+
+        //Добавление индекса полю
+        $bd_index = "CREATE INDEX c_text ON comments(content);";
+
+        //Создание индекса уникальности
+        $bd_unique = "CREATE UNIQUE INDEX email ON users(email);";
 
     ?>
 
